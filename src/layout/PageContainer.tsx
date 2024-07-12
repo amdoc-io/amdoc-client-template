@@ -8,7 +8,7 @@ export const PageContainer = (
   return (
     <div
       {...restProps}
-      className={`px-4 lg:px-12 max-w-screen-2xl ml-auto mr-auto w-full py-12 ${className}`}
+      className={`px-8 lg:px-12 max-w-screen-2xl ml-auto mr-auto w-full py-12 ${className}`}
     ></div>
   );
 };
