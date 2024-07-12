@@ -6,8 +6,9 @@ import { MobileSideBar } from "./layout/MobileSideBar";
 import { OutletWrapper } from "./layout/OutletWrapper";
 import { SideBar } from "./layout/SideBar";
 import { GithubTree } from "./model/GithubModel";
-import { HomePage } from "./pages/HomePage";
+import { DocPage } from "./pages/DocPage";
 import { useEffect } from "react";
+import { HomePage } from "./pages/HomePage";
 
 function App() {
   const tree: GithubTree[] = useSelector((state: any) => state.content.tree);
@@ -39,8 +40,12 @@ function App() {
       element: <Wrapper />,
       children: [
         {
-          path: "*",
+          path: "/",
           element: <HomePage />,
+        },
+        {
+          path: "*",
+          element: <DocPage />,
         },
       ],
     },
