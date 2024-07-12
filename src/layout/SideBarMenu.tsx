@@ -30,7 +30,7 @@ export const SideBarMenu = () => {
               <li key={`${depth}-${i}`} className="text-gray-500">
                 <a
                   href={item.href}
-                  className={`flex items-center break-all gap-3 px-4 lg:px-8 py-2 w-[250px] transition-all duration-300 ${
+                  className={`flex items-center break-all gap-3 px-4 lg:px-8 py-2 min-w-[250px] max-w-full lg:max-w-[250px] transition-all duration-300 ${
                     isCurrentPage(item)
                       ? "bg-secondary text-white"
                       : "hover:bg-gray-100/70"
@@ -48,9 +48,9 @@ export const SideBarMenu = () => {
 
   return (
     <div className="flex flex-col gap-4 pb-4">
-      <Divider className="!mb-0" />
+      <Divider className="!mb-0 hidden lg:block" />
       {renderItems(menu, 0)}
-      <Divider className="!mt-0" />
+      <Divider className="!mt-0 hidden lg:block" />
     </div>
   );
 };
