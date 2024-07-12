@@ -1,7 +1,9 @@
+import { PageContainer } from "../layout/PageContainer";
+
 export const HomePage = () => {
   return (
-    <div>
+    <PageContainer>
       <h1>Coming soon...</h1>
-    </div>
+    </PageContainer>
   );
 };
