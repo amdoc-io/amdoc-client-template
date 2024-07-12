@@ -16,6 +16,14 @@ code {
     monospace;
 }
 
+* {
+  font-family: "Inter";
+}
+
+html {
+  scroll-padding-top: 6rem;
+}
+
 h1 {
   display      : block;
   font-size    : 2em;
@@ -114,4 +122,24 @@ pre {
   list-style-type    : lower-latin;
   list-style-position: inside;
   margin-left        : 16px;
+}
+
+p {
+  margin-top   : 12px;
+  margin-bottom: 12px;
+}
+
+.toc li {
+  margin-top   : 16px;
+  margin-bottom: 16px;
+}
+
+.toc a {
+  color      : blue;
+  transition : all 0.3s;
+  font-weight: 500;
+}
+
+.toc a:hover {
+  opacity: 0.5;
 }

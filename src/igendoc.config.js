@@ -1,6 +1,6 @@
 module.exports = {
-  owner: "$owner",
-  repo: "$repo",
+  owner: "tungxd96",
+  repo: "igendoc-master",
   menu: [
     {
       label: "Introduction",

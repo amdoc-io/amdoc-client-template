@@ -19,6 +19,33 @@ export const DocPage = () => {
 
   const [content, setContent] = useState<string>("");
 
+  const [isSticky, setIsSticky] = useState(false);
+
+  useEffect(() => {
+    const applyStyles = () => {
+      const element = document.getElementById("toc-container");
+
+      if (element) {
+        element.style.position = isSticky ? "sticky" : "static";
+        element.style.top = "100px";
+        element.style.transition = "transform 0.3s ease-in-out";
+      }
+    };
+
+    applyStyles();
+
+    const handleScroll = () => {
+      const shouldStick = window.scrollY > 0;
+      setIsSticky(shouldStick);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [isSticky]);
+
   const fetchContent = useCallback(async () => {
     if (githubInstallationToken && githubInstallationToken.token) {
       const res = await getGithubRepoContent(
@@ -60,22 +87,51 @@ export const DocPage = () => {
     });
   }, [content]);
 
+  useEffect(() => {
+    const moveElement = () => {
+      const tableOfContents = document.getElementById("table-of-contents");
+      const onPage = document.getElementById("on-this-page");
+
+      if (tableOfContents && onPage) {
+        const firstUl = tableOfContents.nextElementSibling;
+
+        if (firstUl && firstUl.tagName.toLowerCase() === "ul") {
+          const container = document.createElement("div");
+          tableOfContents.className = "hidden";
+          firstUl.className = "text-sm toc";
+          container.appendChild(tableOfContents);
+          container.appendChild(firstUl);
+
+          onPage.insertAdjacentElement("afterend", container);
+        }
+      }
+    };
+
+    if (content) {
+      moveElement();
+    }
+  }, [content]);
+
   return (
     <div className="flex gap-8">
-      <div className="content flex flex-col w-full lg:w-[80%]">
+      <div className="content flex flex-col w-full lg:w-[80%] text-[18px] leading-8">
         <ReactMarkdown
           remarkPlugins={[
-            remarkToc,
+            [remarkToc, { maxDepth: 2 }],
             remarkGfm,
             [remarkHeadingId, { defaults: true, uniqueDefaults: true }],
           ]}
         >
-          {content}
+          {`### Table of Contents \n \n${content}`}
         </ReactMarkdown>
       </div>
 
       <div className="hidden lg:flex flex-col w-[20%]">
-        <p>On this page</p>
+        <div id="toc-container">
+          <div id="on-this-page" className="font-semibold">
+            On this page
+          </div>
+        </div>
       </div>
     </div>
   );

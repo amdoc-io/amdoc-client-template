@@ -45,7 +45,6 @@ export const OutletWrapper = (
           jwt,
           installationId
         );
-        console.log(githubInstallationToken);
         dispatch(setGithubInstallationToken(githubInstallationToken));
         const commit = await getCommit(
           githubInstallationToken?.token || "",
