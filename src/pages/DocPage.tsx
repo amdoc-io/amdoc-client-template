@@ -10,6 +10,7 @@ import { CopyToClipboard } from "../actions/CopyToClipboard";
 import { getGithubRepoContent } from "../fetch/GithubFetch";
 import { GithubInstallationToken } from "../model/GithubModel";
 import { owner, repo } from "../igendoc.config";
+import { DocContainer } from "../layout/DocContainer";
 
 export const DocPage = () => {
   const location = useLocation();
@@ -113,26 +114,28 @@ export const DocPage = () => {
   }, [content]);
 
   return (
-    <div className="flex gap-8">
-      <div className="content flex flex-col w-full lg:w-[80%] text-[18px] leading-8">
-        <ReactMarkdown
-          remarkPlugins={[
-            [remarkToc, { maxDepth: 2 }],
-            remarkGfm,
-            [remarkHeadingId, { defaults: true, uniqueDefaults: true }],
-          ]}
-        >
-          {`### Table of Contents \n \n${content}`}
-        </ReactMarkdown>
-      </div>
+    <DocContainer>
+      <div className="flex gap-8">
+        <div className="content flex flex-col w-full lg:w-[80%] text-[18px] leading-8">
+          <ReactMarkdown
+            remarkPlugins={[
+              [remarkToc, { maxDepth: 2 }],
+              remarkGfm,
+              [remarkHeadingId, { defaults: true, uniqueDefaults: true }],
+            ]}
+          >
+            {`${content && "### Table of Contents \n \n"}${content}`}
+          </ReactMarkdown>
+        </div>
 
-      <div className="hidden lg:flex flex-col w-[20%]">
-        <div id="toc-container">
-          <div id="on-this-page" className="font-semibold">
-            On this page
+        <div className="hidden lg:flex flex-col w-[20%]">
+          <div id="toc-container">
+            <div id="on-this-page" className="font-semibold">
+              On this page
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </DocContainer>
   );
 };

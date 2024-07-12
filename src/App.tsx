@@ -25,7 +25,7 @@ function App() {
             <SideBar />
             <div className="relative w-full">
               <MobileSideBar />
-              <OutletWrapper className="py-[68px] px-4 lg:px-8 w-full max-w-screen-2xl ml-auto mr-auto">
+              <OutletWrapper className="w-full">
                 <Outlet />
               </OutletWrapper>
             </div>
