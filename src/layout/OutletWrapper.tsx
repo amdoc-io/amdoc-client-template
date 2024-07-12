@@ -56,7 +56,7 @@ export const OutletWrapper = (
           githubInstallationToken?.token || "",
           owner,
           repo,
-          commit.sha
+          commit?.sha
         );
         if (githubTree) {
           dispatch(
