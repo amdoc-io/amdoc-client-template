@@ -1,19 +1,19 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "iGendoc",
+  "name": "AI Documentation",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "https://utfs.io/f/f9fcd455-9c2b-4f0a-a243-3f3bc526fddb-1i.png",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
       "src": "logo192.png",
-      "type": "image/png",
+      "type": "https://utfs.io/f/f9fcd455-9c2b-4f0a-a243-3f3bc526fddb-1i.png",
       "sizes": "192x192"
     },
     {
-      "src": "logo512.png",
+      "src": "https://utfs.io/f/f9fcd455-9c2b-4f0a-a243-3f3bc526fddb-1i.png",
       "type": "image/png",
       "sizes": "512x512"
     }

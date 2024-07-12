@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setLastUpdated, setTree } from "../features/content/contentSlice";
 import { getAuthToken, getGithubAppJWT } from "../fetch/AIMFetch";
 import {
+  getCommit,
   getGithubAppInstallations,
   getGithubInstallationAccessTokens,
   getGithubTree,
@@ -11,6 +12,7 @@ import {
   setAuthToken,
   setGithubInstallationToken,
 } from "../features/auth/authSlice";
+import { owner, repo } from "../igendoc.config";
 
 export const OutletWrapper = (
   props: React.DetailedHTMLProps<
@@ -43,11 +45,18 @@ export const OutletWrapper = (
           jwt,
           installationId
         );
+        console.log(githubInstallationToken);
         dispatch(setGithubInstallationToken(githubInstallationToken));
+        const commit = await getCommit(
+          githubInstallationToken?.token || "",
+          owner,
+          repo
+        );
         const githubTree = await getGithubTree(
           githubInstallationToken?.token || "",
-          "tungxd96",
-          "igendoc-documentation"
+          owner,
+          repo,
+          commit.sha
         );
         if (githubTree) {
           dispatch(

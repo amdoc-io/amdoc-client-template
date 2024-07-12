@@ -9,6 +9,7 @@ import remarkToc from "remark-toc";
 import { CopyToClipboard } from "../actions/CopyToClipboard";
 import { getGithubRepoContent } from "../fetch/GithubFetch";
 import { GithubInstallationToken } from "../model/GithubModel";
+import { owner, repo } from "../igendoc.config";
 
 export const HomePage = () => {
   const location = useLocation();
@@ -22,8 +23,8 @@ export const HomePage = () => {
     if (githubInstallationToken && githubInstallationToken.token) {
       const res = await getGithubRepoContent(
         githubInstallationToken.token,
-        "tungxd96",
-        "igendoc-documentation",
+        owner,
+        repo,
         `src${location.pathname}.md`
       );
       if (res) {

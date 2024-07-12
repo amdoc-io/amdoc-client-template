@@ -9,7 +9,7 @@ export const Divider = (
   return (
     <div
       {...restProps}
-      className={`flex w-full bg-gray-200 h-[1px] my-8 ${className}`}
+      className={`flex w-full bg-gray-200 h-[1px] my-4 ${className}`}
     />
   );
 };

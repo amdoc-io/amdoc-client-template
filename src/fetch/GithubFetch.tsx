@@ -24,10 +24,28 @@ export const getGithubRepoContent = async (
     });
 };
 
-export const getGithubTree = (token: string, owner: string, repo: string) => {
+export const getCommit = (token: string, owner: string, repo: string) => {
   return axios
     .get(
-      `  https://api.github.com/repos/${owner}/${repo}/git/trees/e516b0ab5b1e6eb2549b089d6650ba9538f5e46a?recursive=true`,
+      `https://api.github.com/repos/${owner}/${repo}/commits/heads/main`,
+      createHeader(token)
+    )
+    .then((res) => res.data)
+    .catch((err) => {
+      console.error(err);
+      return undefined;
+    });
+};
+
+export const getGithubTree = (
+  token: string,
+  owner: string,
+  repo: string,
+  sha: string
+) => {
+  return axios
+    .get(
+      `https://api.github.com/repos/${owner}/${repo}/git/trees/${sha}?recursive=true`,
       createHeader(token)
     )
     .then((res) => res.data as GetGithubTreeResponse)

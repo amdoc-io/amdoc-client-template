@@ -20,7 +20,7 @@ export const MobileSideBar = () => {
       </div>
 
       {menuOpen && (
-        <div className="absolute top-14 bg-white z-20 left-0 right-0 p-4">
+        <div className="block lg:hidden absolute top-14 bg-white z-20 left-0 right-0 p-4">
           <SideBarMenu />
         </div>
       )}

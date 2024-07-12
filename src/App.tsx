@@ -20,11 +20,11 @@ function App() {
         <Header />
 
         <div className="flex flex-col h-[100vh]">
-          <div className="flex h-full max-w-screen-2xl ml-auto mr-auto w-full mt-16">
+          <div className="flex h-full w-full mt-16">
             <SideBar />
             <div className="relative w-full">
               <MobileSideBar />
-              <OutletWrapper className="py-[68px] px-4 lg:px-8 w-full">
+              <OutletWrapper className="py-[68px] px-4 lg:px-8 w-full max-w-screen-2xl ml-auto mr-auto">
                 <Outlet />
               </OutletWrapper>
             </div>
