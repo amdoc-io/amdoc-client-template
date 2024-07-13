@@ -26,3 +26,9 @@ jobs:
           upstream_branch: main
           pr_labels: automerge
           is_force_push_pr: true
+      - id: automerge
+        name: automerge
+        uses: "pascalgn/automerge-action@v0.15.3"
+        env:
+          GITHUB_TOKEN: "${{ secrets.ACTION_SECRET }}"
+          MERGE_LABELS: ""
