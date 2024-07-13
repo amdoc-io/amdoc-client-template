@@ -21,6 +21,7 @@ jobs:
         name: actions-template-sync
         uses: AndreasAugustin/actions-template-sync@v2.2.3
         with:
+          github_token: ${{ secrets.ACTION_SECRET }}
           source_repo_path: amdoc-io/amdoc-client-template
           upstream_branch: main
           pr_labels: automerge
