@@ -22,9 +22,6 @@ jobs:
           source_repo_path: "amdoc-io/amdoc-client-template"
           upstream_branch: "main"
           pr_labels: "automerge"
-      - name: Debug PR number
-        run: echo "Pull request number: ${{ steps.template-sync.outputs.pull-request-number }}"
-
       - name: Merge PR using GitHub CLI
         if: steps.template-sync.outputs.pull-request-number != ''
         run: |
