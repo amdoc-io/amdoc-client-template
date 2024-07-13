@@ -23,5 +23,5 @@ jobs:
           upstream_branch: "main"
       - name: automerge
         uses: "pascalgn/automerge-action@v0.16.3"
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
