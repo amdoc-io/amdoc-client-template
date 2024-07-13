@@ -12,6 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      pull-requests: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -20,16 +21,3 @@ jobs:
         with:
           source_repo_path: "amdoc-io/amdoc-client-template"
           upstream_branch: "main"
-      - name: Commit and push changes
-        run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          if ! git diff --quiet; then
-            git add -A
-            git commit -m "Sync with template"
-            git push origin main
-          else
-            echo "No changes to commit"
-          fi
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
