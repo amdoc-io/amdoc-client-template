@@ -13,7 +13,7 @@ export const ListButton = (
   return (
     <button
       {...restProps}
-      className={`w-full rounded-md flex justify-between items-center gap-2 p-2 hover:bg-gray-100/70 transition-all duration-300 cursor-pointer group`}
+      className={`w-full flex justify-between items-center gap-2 py-2 px-8 hover:bg-gray-100/70 transition-all duration-300 cursor-pointer group`}
     >
       <div className="flex items-center gap-4">
         <div className="text-primary">{icon}</div>

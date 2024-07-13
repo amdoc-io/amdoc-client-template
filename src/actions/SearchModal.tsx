@@ -51,8 +51,8 @@ export const SearchModal = () => {
 
       <Divider className="!my-0" />
 
-      <div className="p-6 flex flex-col gap-4">
-        <div className="text-gray-500 font-medium">Suggested</div>
+      <div className="py-6 flex flex-col gap-2">
+        <div className="text-gray-500 font-medium mx-8">Suggested</div>
 
         <div className="flex flex-col">
           <ListButton
