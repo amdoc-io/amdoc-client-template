@@ -6,8 +6,11 @@ import { useLocation } from "react-router-dom";
 import { menu } from "../igendoc.config";
 import { extractHeadingTitle } from "../utils/StringUtils";
 import { SearchBox } from "../actions/SearchBox";
+import { useDispatch } from "react-redux";
+import { setSearchModalOpen } from "../features/search/searchSlice";
 
 export const MobileSideBar = () => {
+  const dispatch = useDispatch();
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const location = useLocation();
   const isDocPage = useMemo(
@@ -33,9 +36,11 @@ export const MobileSideBar = () => {
       </div>
 
       {menuOpen && (
-        <div className="flex lg:hidden absolute top-0 bg-white z-10 left-0 right-0 p-4 border-b border-b-gray-200/70 flex-col gap-6">
+        <div className="flex lg:hidden absolute top-0 bg-white z-10 left-0 right-0 py-4 border-b border-b-gray-200/70 flex-col gap-6">
           <div className="h-10 z-10 bg-transparent" />
-          <SearchBox />
+          <div className="px-8">
+            <SearchBox onClick={() => dispatch(setSearchModalOpen(true))} />
+          </div>
           <SideBarMenu />
         </div>
       )}
