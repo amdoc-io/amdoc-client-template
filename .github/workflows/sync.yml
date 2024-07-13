@@ -21,7 +21,7 @@ jobs:
         name: actions-template-sync
         uses: AndreasAugustin/actions-template-sync@v2.2.3
         with:
-          source_repo_path: "amdoc-io/amdoc-client-template"
-          upstream_branch: "main"
-          pr_labels: "automerge"
+          source_repo_path: amdoc-io/amdoc-client-template
+          upstream_branch: main
+          pr_labels: automerge
           is_force_push_pr: true
