@@ -5,6 +5,7 @@ import { Cross as Hamburger } from "hamburger-react";
 import { useLocation } from "react-router-dom";
 import { menu } from "../igendoc.config";
 import { extractHeadingTitle } from "../utils/StringUtils";
+import { SearchBox } from "../actions/SearchBox";
 
 export const MobileSideBar = () => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
@@ -32,8 +33,9 @@ export const MobileSideBar = () => {
       </div>
 
       {menuOpen && (
-        <div className="block lg:hidden absolute top-0 bg-white z-10 left-0 right-0 p-4 border-b border-b-gray-200/70">
-          <div className="h-16 z-10 bg-transparent" />
+        <div className="flex lg:hidden absolute top-0 bg-white z-10 left-0 right-0 p-4 border-b border-b-gray-200/70 flex-col gap-6">
+          <div className="h-10 z-10 bg-transparent" />
+          <SearchBox />
           <SideBarMenu />
         </div>
       )}
