@@ -1,18 +1,23 @@
 name: Sync with template
 
 on:
+  schedule:
+    - cron: "0 * * * *"
   push:
     branches:
       - main
 
 jobs:
-  sync:
+  repo-sync:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v4
       - name: actions-template-sync
         uses: AndreasAugustin/actions-template-sync@v2.2.3
         with:
-          source_repo: "https://github.com/amdoc-io/amdoc-client-template.git"
-          source_branch: "main"
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          source_repo_path: "amdoc-io/amdoc-client-template"
+          upstream_branch: "main"
