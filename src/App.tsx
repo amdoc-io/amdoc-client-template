@@ -9,6 +9,7 @@ import { GithubTree } from "./model/GithubModel";
 import { DocPage } from "./pages/DocPage";
 import { useEffect } from "react";
 import { HomePage } from "./pages/HomePage";
+import { Footer } from "./layout/Footer";
 
 function App() {
   const tree: GithubTree[] = useSelector((state: any) => state.content.tree);
@@ -28,6 +29,9 @@ function App() {
               <OutletWrapper className="ml-0 lg:ml-[250px]">
                 <Outlet />
               </OutletWrapper>
+              <div className="ml-0 lg:ml-[250px] px-8 lg:px-12 bg-gray-container">
+                <Footer />
+              </div>
             </div>
           </div>
         </div>

@@ -11,3 +11,24 @@ export const mapToSideMenu = (tree: GithubTree[]) => {
     };
   });
 };
+
+export const flattenMenu = (menu: any) => {
+  const flatMenu = [] as any[];
+
+  const traverse = (items: any[]) => {
+    items.forEach((item) => {
+      if (item.href) {
+        flatMenu.push({
+          label: item.label,
+          href: item.href,
+        });
+      }
+      if (item.children) {
+        traverse(item.children);
+      }
+    });
+  };
+
+  traverse(menu);
+  return flatMenu;
+};
