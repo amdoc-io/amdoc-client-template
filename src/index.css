@@ -20,6 +20,7 @@ code {
   font-family        : "Inter";
   overscroll-behavior: none;
   scrollbar-width    : thin;
+  scrollbar-color    : rgb(210, 210, 210) rgba(248, 248, 248);
 }
 
 html {
