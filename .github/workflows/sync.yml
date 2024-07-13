@@ -25,11 +25,10 @@ jobs:
           pr_labels: "automerge"
       - id: automerge
         name: automerge
-        if: steps.template-sync.outputs.pull-request-number != ''
+        if: steps.template-sync.outputs.pr_branch != ''
         uses: "pascalgn/automerge-action@v0.15.6"
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-          PULL_REQUEST: "${{ steps.template-sync.outputs.pull-request-number }}"
       - name: feedback
         if: ${{ steps.automerge.outputs.mergeResult == 'merged' }}
         run: |
