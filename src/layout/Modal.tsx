@@ -13,8 +13,24 @@ export default function Modal(props: {
   title?: ReactNode;
   children?: ReactNode;
   action?: ReactNode;
+  position?: "centerEnd" | "start";
 }) {
-  const { open, setOpen = () => {}, icon, title, children, action } = props;
+  const {
+    open,
+    setOpen = () => {},
+    icon,
+    title,
+    children,
+    action,
+    position = "centerEnd",
+  } = props;
+
+  const getClassByPosition = () => {
+    if (position === "start") {
+      return "items-start";
+    }
+    return "items-end sm:items-center";
+  };
 
   return (
     <Dialog open={open} onClose={setOpen} className="relative z-40">
@@ -22,8 +38,10 @@ export default function Modal(props: {
         transition
         className="fixed inset-0 bg-gray-500 bg-opacity-40 transition-opacity data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in"
       />
-      <div className="fixed inset-0 z-40 w-screen overflow-y-auto">
-        <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+      <div className="fixed inset-0 z-40 w-screen overflow-y-auto top-8">
+        <div
+          className={`flex min-h-full justify-center p-4 text-center sm:p-0 ${getClassByPosition()}`}
+        >
           <DialogPanel
             transition
             className="relative transform rounded-lg bg-white text-left shadow-xl transition-all data-[closed]:translate-y-4 data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in sm:my-8 sm:w-full sm:max-w-lg data-[closed]:sm:translate-y-0 data-[closed]:sm:scale-95"

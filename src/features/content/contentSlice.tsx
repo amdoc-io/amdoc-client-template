@@ -1,12 +1,12 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { GithubTree } from "../../model/GithubModel";
 
-export interface AuthState {
+export interface ContentState {
   tree?: GithubTree[];
   lastUpdated?: string;
 }
 
-const initialState: AuthState = {
+const initialState: ContentState = {
   tree: [],
   lastUpdated: undefined,
 };
