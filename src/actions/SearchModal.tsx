@@ -5,6 +5,9 @@ import { Input } from "../forms/Input";
 import { RxMagnifyingGlass } from "react-icons/rx";
 import { Divider } from "../layout/Divider";
 
+import { MdOutlineAutoAwesome } from "react-icons/md";
+import { ListButton } from "./ListButton";
+
 export const SearchModal = () => {
   const dispatch = useDispatch();
   const searchModalOpen: boolean = useSelector(
@@ -28,7 +31,13 @@ export const SearchModal = () => {
 
       <Divider className="!my-0" />
 
-      <div className="p-6">Content</div>
+      <div className="p-6 flex flex-col gap-4">
+        <div className="text-gray-500 font-medium">Suggested</div>
+
+        <div className="flex flex-col">
+          <ListButton icon={<MdOutlineAutoAwesome />}>Ask AI</ListButton>
+        </div>
+      </div>
     </Modal>
   );
 };
