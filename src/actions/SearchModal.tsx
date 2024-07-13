@@ -1,6 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
 import Modal from "../layout/Modal";
 import { setSearchModalOpen } from "../features/search/searchSlice";
+import { Input } from "../forms/Input";
+import { RxMagnifyingGlass } from "react-icons/rx";
+import { Divider } from "../layout/Divider";
 
 export const SearchModal = () => {
   const dispatch = useDispatch();
@@ -13,8 +16,19 @@ export const SearchModal = () => {
       position="start"
       open={searchModalOpen}
       setOpen={(open) => dispatch(setSearchModalOpen(open))}
+      noStyle
     >
-      <p>Coming soon...</p>
+      <div className="p-2">
+        <Input
+          leading={<RxMagnifyingGlass />}
+          placeholder="Search the docs or ask a question"
+          noStyle
+        />
+      </div>
+
+      <Divider className="!my-0" />
+
+      <div className="p-6">Content</div>
     </Modal>
   );
 };

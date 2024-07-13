@@ -14,6 +14,7 @@ export default function Modal(props: {
   children?: ReactNode;
   action?: ReactNode;
   position?: "centerEnd" | "start";
+  noStyle?: boolean;
 }) {
   const {
     open,
@@ -23,6 +24,7 @@ export default function Modal(props: {
     children,
     action,
     position = "centerEnd",
+    noStyle,
   } = props;
 
   const getClassByPosition = () => {
@@ -47,9 +49,9 @@ export default function Modal(props: {
             className="relative transform rounded-lg w-full md:min-w-[648px] max-h-[750px] overflow-auto top-8 bg-white text-left shadow-xl transition-all data-[closed]:translate-y-4 data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in sm:my-8 sm:max-w-lg data-[closed]:sm:translate-y-0 data-[closed]:sm:scale-95"
           >
             <div
-              className={`bg-white px-4 pb-6 pt-5 sm:p-6 sm:pb-6 rounded-tl-lg rounded-tr-lg ${
-                action ? "" : "rounded-bl-lg rounded-br-lg"
-              }`}
+              className={`bg-white rounded-tl-lg rounded-tr-lg ${
+                noStyle ? "" : "px-4 pb-6 pt-5 sm:p-6 sm:pb-6"
+              } ${action ? "" : "rounded-bl-lg rounded-br-lg"}`}
             >
               <div className="sm:flex sm:items-start">
                 {icon && (
