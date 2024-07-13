@@ -77,8 +77,8 @@ export const Footer = () => {
 
         <Divider className="!bg-gray-footer/40 max-w-screen-2xl ml-auto mr-auto w-full " />
 
-        <div className="max-w-screen-2xl ml-auto mr-auto w-full px-8 lg:px-12 py-8 grid grid-cols-4 gap-4">
-          <div className="text-white col-span-2">
+        <div className="max-w-screen-2xl ml-auto mr-auto w-full px-8 lg:px-12 py-8 grid grid-cols-1 sm:grid-cols-4 gap-4">
+          <div className="text-white col-span-1 sm:col-span-2">
             <ReactSVG src={logo} beforeInjection={handleBeforeInjection} />
           </div>
 

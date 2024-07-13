@@ -2,7 +2,7 @@ import { PageContainer } from "../layout/PageContainer";
 
 export const HomePage = () => {
   return (
-    <PageContainer className="min-h-[70vh]">
+    <PageContainer>
       <h1>Coming soon...</h1>
     </PageContainer>
   );

@@ -26,7 +26,7 @@ function App() {
             <SideBar />
             <div className="relative w-full">
               <MobileSideBar />
-              <OutletWrapper className="ml-0 lg:ml-[250px]">
+              <OutletWrapper className="ml-0 lg:ml-[250px] min-h-[calc(100vh-4rem-24.2rem)]">
                 <Outlet />
               </OutletWrapper>
               <div className="ml-0 lg:ml-[250px]">
