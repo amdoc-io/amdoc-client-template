@@ -20,12 +20,12 @@ on:
 jobs:
   automerge:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - id: automerge
         name: automerge
         uses: pascalgn/automerge-action@v0.15.3
-        permissions:
-          contents: write
         env:
           GITHUB_TOKEN: ${{ secrets.ACTION_SECRET }}
           MERGE_LABELS: ""
