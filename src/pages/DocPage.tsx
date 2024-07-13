@@ -8,9 +8,9 @@ import remarkHeadingId from "remark-heading-id";
 import remarkToc from "remark-toc";
 import { CopyToClipboard } from "../actions/CopyToClipboard";
 import { getGithubRepoContent } from "../fetch/GithubFetch";
-import { GithubInstallationToken } from "../model/GithubModel";
 import { owner, repo } from "../igendoc.config";
 import { DocContainer } from "../layout/DocContainer";
+import { GithubInstallationToken } from "../model/GithubModel";
 
 export const DocPage = () => {
   const location = useLocation();

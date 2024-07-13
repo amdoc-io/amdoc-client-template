@@ -9,7 +9,7 @@ export const PoweredByIGendoc = (
       href="https://igendoc.com"
       target="_blank"
       rel="noreferrer"
-      className={`absolute cursor-pointer bottom-0 py-4 w-full border-t border-t-gray-200/70 px-8 text-xs flex justify-center items-center ${props.className}`}
+      className={`absolute bg-white cursor-pointer bottom-0 py-4 w-full border-t border-t-gray-200/70 px-8 text-xs flex justify-center items-center ${props.className}`}
     >
       <p>
         Powered by <span className="font-semibold">iGendoc</span>

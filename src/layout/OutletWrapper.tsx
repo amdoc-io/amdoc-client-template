@@ -1,5 +1,9 @@
 import { useCallback, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import {
+  setAuthToken,
+  setGithubInstallationToken,
+} from "../features/auth/authSlice";
 import { setLastUpdated, setTree } from "../features/content/contentSlice";
 import { getAuthToken, getGithubAppJWT } from "../fetch/AIMFetch";
 import {
@@ -8,10 +12,6 @@ import {
   getGithubInstallationAccessTokens,
   getGithubTree,
 } from "../fetch/GithubFetch";
-import {
-  setAuthToken,
-  setGithubInstallationToken,
-} from "../features/auth/authSlice";
 import { owner, repo } from "../igendoc.config";
 
 export const OutletWrapper = (
