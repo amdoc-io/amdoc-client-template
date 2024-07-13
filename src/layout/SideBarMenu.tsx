@@ -21,7 +21,7 @@ export const SideBarMenu = () => {
               {i - 1 >= 0 && (menu[i - 1].children || []).length === 0 && (
                 <Divider />
               )}
-              <p className="font-semibold mb-2 ml-4 lg:ml-8">{item.label}</p>
+              <p className="font-semibold mb-2 ml-8">{item.label}</p>
               {renderItems(item.children, depth + 1)}
               <Divider />
             </li>
