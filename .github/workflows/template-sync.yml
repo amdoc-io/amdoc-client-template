@@ -27,13 +27,3 @@ jobs:
           pr_labels: automerge
           is_force_push_pr: true
           is_pr_cleanup: true
-      - id: automerge
-        name: automerge
-        uses: pascalgn/automerge-action@v0.15.3
-        env:
-          GITHUB_TOKEN: ${{ secrets.ACTION_SECRET }}
-          MERGE_LABELS: ""
-          MERGE_RETRIES: "6"
-          MERGE_RETRY_SLEEP: "10000"
-          UPDATE_RETRIES: "6"
-          UPDATE_RETRY_SLEEP: "10000"
