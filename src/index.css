@@ -157,3 +157,11 @@ pre {
 .toc a:hover {
   opacity: 0.5;
 }
+
+.footer a {
+  transition: all 0.3s;
+}
+
+.footer a:hover {
+  color: rgb(127, 127, 127);
+}

@@ -29,7 +29,7 @@ function App() {
               <OutletWrapper className="ml-0 lg:ml-[250px]">
                 <Outlet />
               </OutletWrapper>
-              <div className="ml-0 lg:ml-[250px] px-8 lg:px-12 bg-gray-container">
+              <div className="ml-0 lg:ml-[250px]">
                 <Footer />
               </div>
             </div>

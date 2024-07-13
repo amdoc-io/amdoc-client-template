@@ -12,7 +12,7 @@ export const NavigationButton = (
   return (
     <a
       {...restProps}
-      className={`flex flex-col gap-2 pt-6 pb-16 font-medium bg-gray-container transition-all duration-300 px-8 ${
+      className={`flex flex-col gap-2 pt-6 pb-20 font-medium bg-gray-container transition-all duration-300 px-8 ${
         children ? "cursor-pointer hover:bg-gray-hover" : ""
       } ${
         position === "left"

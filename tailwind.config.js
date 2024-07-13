@@ -10,6 +10,7 @@ module.exports = {
         "description": "#737373",
         "gray-container": "rgb(248, 248, 248)",
         "gray-hover": "rgb(240, 240, 240)",
+        "gray-footer": "rgb(127, 127, 127)",
       }
     },
   },

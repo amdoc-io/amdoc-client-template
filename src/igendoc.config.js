@@ -1,4 +1,5 @@
 module.exports = {
+  logo: "https://utfs.io/f/c1abfabb-cc50-4007-ad7c-55b598c6d186-1zbfv.svg",
   email: "$email",
   owner: "$owner",
   repo: "$repo",
