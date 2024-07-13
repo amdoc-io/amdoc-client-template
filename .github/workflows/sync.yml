@@ -22,7 +22,12 @@ jobs:
           source_repo_path: "amdoc-io/amdoc-client-template"
           upstream_branch: "main"
           pr_labels: "automerge"
-      - name: automerge
-        uses: "pascalgn/automerge-action@v0.16.3"
+      - name: Debug PR number
+        run: echo "Pull request number: ${{ steps.template-sync.outputs.pull-request-number }}"
+
+      - name: Merge PR using GitHub CLI
+        if: steps.template-sync.outputs.pull-request-number != ''
+        run: |
+          gh pr merge ${{ steps.template-sync.outputs.pull-request-number }} --auto
         env:
-          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
