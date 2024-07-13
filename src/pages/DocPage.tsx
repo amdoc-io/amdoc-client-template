@@ -71,7 +71,7 @@ export const DocPage = () => {
       const codeElement = element.querySelector("code");
       const content = codeElement ? codeElement.textContent : "";
 
-      element.classList.add("relative");
+      element.className = "relative pr-8";
 
       const copyContainer = document.createElement("div");
       copyContainer.className = "absolute top-[18px] right-4";
@@ -116,7 +116,7 @@ export const DocPage = () => {
   return (
     <DocContainer>
       <div className="flex gap-8">
-        <div className="content flex flex-col w-full lg:w-[80%] text-[18px] leading-8">
+        <div className="content flex flex-col w-full lg:w-[80%] text-[16px]">
           <ReactMarkdown
             remarkPlugins={[
               [remarkToc, { maxDepth: 2 }],
