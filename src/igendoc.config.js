@@ -3,6 +3,7 @@ module.exports = {
   email: "$email",
   owner: "$owner",
   repo: "$repo",
+  contactUrl: "$contactUrl",
   menu: [
     {
       label: "Introduction",
