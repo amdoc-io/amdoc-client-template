@@ -1,5 +1,6 @@
 import { FiCommand } from "react-icons/fi";
 import { RxMagnifyingGlass } from "react-icons/rx";
+import { Pill } from "../display/Pill";
 
 export const SearchBox = (
   props: React.DetailedHTMLProps<
@@ -19,9 +20,9 @@ export const SearchBox = (
           <p className="text-gray-400">Search the docs or ask a question</p>
         </div>
 
-        <div className="flex gap-1 border rounded-md bg-gray-100 items-center p-1 text-xs">
+        <Pill>
           <FiCommand />K
-        </div>
+        </Pill>
       </div>
     </div>
   );

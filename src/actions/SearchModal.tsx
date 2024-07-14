@@ -11,6 +11,8 @@ import Modal from "../layout/Modal";
 import { MdOutlineAutoAwesome } from "react-icons/md";
 import { AskAISearchContent } from "./AskAISearchContent";
 import { ListButton } from "./ListButton";
+import { AiOutlineEnter } from "react-icons/ai";
+import { Pill } from "../display/Pill";
 
 const SuggestedSearch = [
   {
@@ -41,6 +43,12 @@ export const SearchModal = () => {
             leading={<RxMagnifyingGlass />}
             placeholder="Search the docs or ask a question"
             noStyle
+            trailing={
+              <Pill>
+                <AiOutlineEnter />
+                Enter
+              </Pill>
+            }
           />
         </div>
 

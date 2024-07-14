@@ -7,6 +7,7 @@ export const Input = (
     HTMLInputElement
   > & {
     leading?: ReactNode;
+    trailing?: ReactNode;
     label?: string;
     required?: boolean;
     note?: ReactNode;
@@ -25,6 +26,7 @@ export const Input = (
     note,
     error,
     noStyle,
+    trailing,
     ...restProps
   } = props;
 
@@ -55,8 +57,13 @@ export const Input = (
             {...restProps}
             type="text"
             id={id}
-            className={`block focus:outline-none flex-1 border-0 bg-transparent py-1.5 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6 pl-2 ${inputClassName}`}
+            className={`block focus:outline-none flex-1 border-0 bg-transparent py-1.5 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6 px-2 ${inputClassName}`}
           />
+          {trailing && (
+            <span className="flex select-none items-center pr-3 text-gray-500 sm:text-sm">
+              {trailing}
+            </span>
+          )}
         </div>
       </div>
       {note && (
