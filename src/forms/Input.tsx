@@ -12,6 +12,7 @@ export const Input = (
     note?: ReactNode;
     error?: ReactNode;
     noStyle?: boolean;
+    inputClassName?: string;
   }
 ) => {
   const {
@@ -19,6 +20,7 @@ export const Input = (
     id,
     label,
     className = "",
+    inputClassName = "",
     required,
     note,
     error,
@@ -53,7 +55,7 @@ export const Input = (
             {...restProps}
             type="text"
             id={id}
-            className={`block focus:outline-none flex-1 border-0 bg-transparent py-1.5 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6 pl-2`}
+            className={`block focus:outline-none flex-1 border-0 bg-transparent py-1.5 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6 pl-2 ${inputClassName}`}
           />
         </div>
       </div>
