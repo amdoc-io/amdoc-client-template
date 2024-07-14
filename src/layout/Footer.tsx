@@ -39,13 +39,25 @@ export const Footer = () => {
 
   return (
     <div className="flex flex-col w-full bg-gray-container text-sm footer">
-      <div className="grid grid-cols-2 px-8 lg:px-12 max-w-screen-2xl ml-auto mr-auto w-full">
-        <NavigationButton href={prev?.href} position="left">
+      <div className="grid grid-cols-1 lg:grid-cols-2 rtl px-0 lg:px-12 max-w-screen-2xl ml-auto mr-auto w-full">
+        <NavigationButton
+          href={prev?.href}
+          position="left"
+          className="hidden lg:flex"
+        >
           {prev?.label}
         </NavigationButton>
 
         <NavigationButton href={next?.href} position="right">
           {next?.label}
+        </NavigationButton>
+
+        <NavigationButton
+          href={prev?.href}
+          position="left"
+          className="flex lg:hidden"
+        >
+          {prev?.label}
         </NavigationButton>
       </div>
 
