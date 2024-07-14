@@ -13,7 +13,9 @@ export const NavigationButton = (
     <a
       {...restProps}
       className={`flex flex-col gap-2 pt-6 pb-20 font-medium bg-gray-container transition-all duration-300 px-8 items-start ${
-        children ? "cursor-pointer hover:bg-gray-hover hover:!text-black" : ""
+        children
+          ? "cursor-pointer hover:bg-gray-hover hover:!text-black"
+          : "hidden lg:flex"
       } ${
         position === "left"
           ? "border-t-[0.5px] border-t-gray-200/70 lg:border-r-[0.5px] lg:border-r-gray-200/70"
