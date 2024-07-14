@@ -8,11 +8,13 @@ import { Input } from "../forms/Input";
 import { Divider } from "../layout/Divider";
 import Modal from "../layout/Modal";
 
-import { MdOutlineAutoAwesome } from "react-icons/md";
-import { AskAISearchContent } from "./AskAISearchContent";
-import { ListButton } from "./ListButton";
 import { AiOutlineEnter } from "react-icons/ai";
+import { MdOutlineAutoAwesome } from "react-icons/md";
 import { Pill } from "../display/Pill";
+import { contactUrl } from "../igendoc.config";
+import { AskAISearchContent } from "./AskAISearchContent";
+import { Link } from "./Link";
+import { ListButton } from "./ListButton";
 
 const SuggestedSearch = [
   {
@@ -79,6 +81,19 @@ export const SearchModal = () => {
       open={searchModalOpen}
       setOpen={(open) => dispatch(setSearchModalOpen(open))}
       noStyle
+      action={
+        <div className="text-sm text-gray-500">
+          Need help?{" "}
+          <Link
+            href={contactUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="font-medium"
+          >
+            Contact support
+          </Link>
+        </div>
+      }
     >
       {renderContent()}
     </Modal>

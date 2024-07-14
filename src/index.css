@@ -149,13 +149,15 @@ pre {
   margin-bottom: 16px;
 }
 
-.toc a {
+.toc a,
+.header a {
   color      : blue;
   transition : all 0.3s;
   font-weight: 500;
 }
 
-.toc a:hover {
+.toc a:hover,
+.header a:hover {
   opacity: 0.5;
 }
 

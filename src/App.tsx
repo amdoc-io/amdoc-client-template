@@ -1,21 +1,14 @@
-import { useSelector } from "react-redux";
 import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 import "./App.css";
+import { Footer } from "./layout/Footer";
 import { Header } from "./layout/Header";
 import { MobileSideBar } from "./layout/MobileSideBar";
 import { OutletWrapper } from "./layout/OutletWrapper";
 import { SideBar } from "./layout/SideBar";
-import { GithubTree } from "./model/GithubModel";
 import { DocPage } from "./pages/DocPage";
-import { useEffect } from "react";
 import { HomePage } from "./pages/HomePage";
-import { Footer } from "./layout/Footer";
 
 function App() {
-  const tree: GithubTree[] = useSelector((state: any) => state.content.tree);
-
-  useEffect(() => {}, [tree]);
-
   const Wrapper = () => {
     return (
       <div>
