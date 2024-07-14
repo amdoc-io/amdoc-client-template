@@ -36,7 +36,7 @@ export const SearchModal = () => {
 
     return (
       <>
-        <div className="p-2">
+        <div className="px-2 h-14 flex items-center">
           <Input
             leading={<RxMagnifyingGlass />}
             placeholder="Search the docs or ask a question"

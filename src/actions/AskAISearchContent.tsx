@@ -25,7 +25,7 @@ export const AskAISearchContent = () => {
 
   return (
     <>
-      <div className="p-2">
+      <div className="px-2 h-14 flex items-center">
         <Input
           value={query}
           inputClassName="!text-gray-600 !text-sm"
@@ -33,7 +33,7 @@ export const AskAISearchContent = () => {
           leading={
             <div className="flex items-center gap-2">
               <div
-                className="text-inherit cursor-pointer text-[18px]"
+                className="text-inherit cursor-pointer"
                 onClick={() => dispatch(setSearchModalContext(undefined))}
               >
                 <RxChevronLeft />
@@ -43,9 +43,6 @@ export const AskAISearchContent = () => {
                   <MdOutlineAutoAwesome />
                 </div>{" "}
                 Ask AI
-                <div className="cursor-pointer">
-                  <RxCross1 />
-                </div>
               </div>
             </div>
           }
