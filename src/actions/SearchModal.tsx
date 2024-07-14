@@ -1,9 +1,6 @@
 import { RxMagnifyingGlass } from "react-icons/rx";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  setSearchModalContext,
-  setSearchModalOpen,
-} from "../features/search/searchSlice";
+import { setSearchModalContext } from "../features/search/searchSlice";
 import { Input } from "../forms/Input";
 import { Divider } from "../layout/Divider";
 import Modal from "../layout/Modal";
@@ -24,11 +21,12 @@ const SuggestedSearch = [
   },
 ];
 
-export const SearchModal = () => {
+export const SearchModal = (props: {
+  open?: boolean;
+  setOpen?: (open: boolean) => void;
+}) => {
+  const { open, setOpen = () => {} } = props;
   const dispatch = useDispatch();
-  const searchModalOpen: boolean = useSelector(
-    (state: any) => state.search.searchModalOpen
-  );
   const searchModalContext: string = useSelector(
     (state: any) => state.search.searchModalContext
   );
@@ -78,8 +76,8 @@ export const SearchModal = () => {
   return (
     <Modal
       position="start"
-      open={searchModalOpen}
-      setOpen={(open) => dispatch(setSearchModalOpen(open))}
+      open={open}
+      setOpen={setOpen}
       noStyle
       action={
         <div className="text-sm text-gray-500">

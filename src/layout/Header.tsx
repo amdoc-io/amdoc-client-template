@@ -1,17 +1,15 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { SearchBox } from "../actions/SearchBox";
-import { useDispatch } from "react-redux";
-import { setSearchModalOpen } from "../features/search/searchSlice";
 import { SearchModal } from "../actions/SearchModal";
 
 export const Header = () => {
-  const dispatch = useDispatch();
+  const [searchModalOpen, setSearchModalOpen] = useState<boolean>(false);
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if ((event.metaKey || event.ctrlKey) && event.key === "k") {
         event.preventDefault();
-        dispatch(setSearchModalOpen(true));
+        setSearchModalOpen(true);
       }
     };
 
@@ -20,7 +18,7 @@ export const Header = () => {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [dispatch]);
+  }, []);
 
   return (
     <>
@@ -32,11 +30,11 @@ export const Header = () => {
 
           <SearchBox
             className="hidden lg:block"
-            onClick={() => dispatch(setSearchModalOpen(true))}
+            onClick={() => setSearchModalOpen(true)}
           />
         </div>
       </header>
-      <SearchModal />
+      <SearchModal open={searchModalOpen} setOpen={setSearchModalOpen} />
     </>
   );
 };

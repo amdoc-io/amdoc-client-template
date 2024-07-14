@@ -1,18 +1,17 @@
-import { useMemo, useState } from "react";
-import { Fragment } from "react/jsx-runtime";
-import { SideBarMenu } from "./SideBarMenu";
 import { Cross as Hamburger } from "hamburger-react";
+import { useMemo, useState } from "react";
 import { useLocation } from "react-router-dom";
+import { Fragment } from "react/jsx-runtime";
+import { SearchBox } from "../actions/SearchBox";
+import { SearchModal } from "../actions/SearchModal";
 import { menu } from "../igendoc.config";
 import { extractHeadingTitle } from "../utils/StringUtils";
-import { SearchBox } from "../actions/SearchBox";
-import { useDispatch } from "react-redux";
-import { setSearchModalOpen } from "../features/search/searchSlice";
+import { SideBarMenu } from "./SideBarMenu";
 
 export const MobileSideBar = () => {
-  const dispatch = useDispatch();
-  const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const location = useLocation();
+  const [menuOpen, setMenuOpen] = useState<boolean>(false);
+  const [searchModalOpen, setSearchModalOpen] = useState<boolean>(false);
   const isDocPage = useMemo(
     () =>
       menu.findIndex(
@@ -39,11 +38,13 @@ export const MobileSideBar = () => {
         <div className="flex lg:hidden absolute top-0 bg-white z-10 left-0 right-0 py-4 border-b border-b-gray-200/70 flex-col gap-6">
           <div className="h-10 z-10 bg-transparent" />
           <div className="px-8">
-            <SearchBox onClick={() => dispatch(setSearchModalOpen(true))} />
+            <SearchBox onClick={() => setSearchModalOpen(true)} />
           </div>
           <SideBarMenu />
         </div>
       )}
+
+      <SearchModal open={searchModalOpen} setOpen={setSearchModalOpen} />
     </Fragment>
   );
 };
