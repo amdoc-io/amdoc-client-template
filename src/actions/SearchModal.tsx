@@ -80,8 +80,8 @@ export const SearchModal = (props: {
       setOpen={setOpen}
       noStyle
       action={
-        <div className="text-sm text-gray-500">
-          Need help?{" "}
+        <div className="text-sm text-gray-500 flex justify-center gap-1">
+          Need help?
           <Link
             href={contactUrl}
             target="_blank"
