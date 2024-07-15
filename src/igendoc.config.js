@@ -3,7 +3,18 @@ module.exports = {
   email: "$email",
   owner: "$owner",
   repo: "$repo",
+  brandName: "$brandName",
+  logoUrl: "$logoUrl",
+  brandColor: "$brandColor",
+  homepageUrl: "$homepageUrl",
+  privacyPolicyUrl: "$privacyPolicyUrl",
+  callToActionName: "$callToActionName",
+  callToActionUrl: "$callToActionUrl",
   contactUrl: "$contactUrl",
+  infoEmail: "$infoEmail",
+  supportEmail: "$supportEmail",
+  careerEmail: "$careerEmail",
+  socialLinks: "$socialLinks",
   menu: [
     {
       label: "Introduction",
