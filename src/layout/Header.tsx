@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { SearchBox } from "../actions/SearchBox";
 import { SearchModal } from "../actions/SearchModal";
+import { brandName } from "../igendoc.config";
 
 export const Header = () => {
   const [searchModalOpen, setSearchModalOpen] = useState<boolean>(false);
@@ -25,7 +26,7 @@ export const Header = () => {
       <header className="fixed h-16 top-0 left-0 right-0 border-b border-b-gray-200/70 py-4 z-30 bg-white flex items-center">
         <div className="grid grid-cols-3 items-center px-8 w-full">
           <div>
-            <a href="/">iGendoc</a>
+            <a href="/">{brandName === "$brandName" ? "iGendoc" : brandName}</a>
           </div>
 
           <SearchBox
