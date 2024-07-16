@@ -1,5 +1,5 @@
 import { useLocation } from "react-router-dom";
-import { menu } from "../igendoc.config";
+import { brandColor, menu } from "../igendoc.config";
 import { Divider } from "./Divider";
 
 export const SideBarMenu = () => {
@@ -31,9 +31,12 @@ export const SideBarMenu = () => {
                 href={item.href}
                 className={`flex items-center break-all gap-3 px-8 py-2 min-w-[250px] max-w-full lg:max-w-[250px] transition-all duration-300 ${
                   isCurrentPage(item)
-                    ? "bg-secondary text-white"
+                    ? "bg-primary text-white"
                     : "hover:bg-gray-100/70"
                 }`}
+                style={{
+                  backgroundColor: isCurrentPage(item) ? brandColor : undefined,
+                }}
               >
                 {item.label}
               </a>
